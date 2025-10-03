@@ -1,0 +1,7 @@
+wwwroot\admin-dashboard.html
+wwwroot\admin-dashboard.js
+wwwroot\admin-login.html
+wwwroot\admin-login.js
+wwwroot\index.html
+wwwroot\styles.css
+wwwroot\scripts.js

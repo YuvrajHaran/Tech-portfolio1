@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a192f;
+            color: #e6e6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            background: #112240;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+        }
+
+        input, button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #64ffda;
+            color: #0a192f;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Admin Login</h2>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button onclick="login()">Login</button>
+        <p id="error" style="color: red;"></p>
+    </div>
+
+    <script src="admin-login.js"></script>
+</body>
+</html>

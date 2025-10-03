@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #020c1b;
+            color: #e6e6e6;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #64ffda;
+        }
+
+        .project-form {
+            margin-bottom: 20px;
+        }
+
+        input, textarea, button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #64ffda;
+            color: #0a192f;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .project-list {
+            margin-top: 20px;
+        }
+
+        .project-item {
+            border: 1px solid #64ffda;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .action-btn {
+            margin-right: 10px;
+            cursor: pointer;
+            background: #64ffda;
+            color: #0a192f;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+
+    <div class="project-form">
+        <h2>Add / Update Project</h2>
+        <input type="hidden" id="projectId" />
+        <input type="text" id="title" placeholder="Project Title" />
+        <textarea id="description" placeholder="Project Description"></textarea>
+        <input type="text" id="githubLink" placeholder="GitHub Link" />
+        <input type="text" id="demoLink" placeholder="Demo Link" />
+        <button onclick="saveProject()">Save Project</button>
+    </div>
+
+    <h2>Projects List</h2>
+    <div id="projects" class="project-list"></div>
+
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

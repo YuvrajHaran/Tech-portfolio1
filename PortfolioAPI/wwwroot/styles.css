@@ -1,0 +1,233 @@
+﻿:root {
+    --main-blue: #0a192f;
+    --neon-green: #64ffda;
+    --dark-bg: #020c1b;
+    --text-color: #e6e6e6;
+}
+
+body {
+    margin: 0;
+    background: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Courier New', monospace;
+    overflow-x: hidden;
+}
+
+/* Sidebar */
+.side-nav {
+    position: fixed;
+    left: -180px;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background: var(--main-blue);
+    transition: left 0.7s ease-in-out;
+    padding-top: 50px;
+    z-index: 1000;
+}
+
+    .side-nav:hover {
+        left: 0;
+        box-shadow: 0 0 30px rgba(100, 255, 218, 0.2);
+    }
+
+.nav-item {
+    padding: 15px;
+    margin: 15px;
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+    .nav-item:hover {
+        background: rgba(100, 255, 218, 0.1);
+        transform: scale(1.05);
+    }
+
+/* Layout */
+.main-content-wrapper {
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: calc(100% - 70px);
+    box-sizing: border-box;
+    position: relative; /* keep relative */
+}
+
+
+.page-header {
+    padding: 20px 10%;
+    background: rgba(10, 25, 47, 0.8);
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    text-align: center;
+    color: var(--neon-green);
+}
+
+.page-main-sections {
+    flex-grow: 1;
+    position: relative;
+}
+
+.section {
+    padding: 50px 10%;
+    border-left: 1px solid rgba(100, 255, 218, 0.1);
+    /*transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    position: relative;*/ /* change from absolute to relative */
+    /*width: 100%;*/
+    box-sizing: border-box;
+/*    pointer-events: none;*/
+}
+
+    .section.active {
+/*        opacity: 1;
+        z-index: 1;
+        pointer-events: auto;*/
+    }
+
+    .section h1, .section h2 {
+        color: var(--neon-green);
+    }
+#project-list div {
+    margin-bottom: 20px; /* Adds vertical space between projects */
+    padding: 10px;
+    border: 1px solid rgba(100, 255, 218, 0.2); /* optional subtle border */
+    border-radius: 5px; /* rounded corners */
+    background: rgba(10, 25, 47, 0.5); /* subtle background */
+}
+/* Project card styles (for index.html project-list) */
+#project-list {
+    margin-top: 20px;
+}
+
+/* Each project card */
+.project-card {
+    margin-bottom: 16px;
+    padding: 14px;
+    border-radius: 8px;
+    background: rgba(10,25,47,0.45);
+    border: 1px solid rgba(100,255,218,0.08);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* Optional small image */
+.project-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+/* Link container & links */
+.project-links {
+    margin-top: 8px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: rgba(100,255,218,0.08);
+    color: var(--neon-green);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .project-link:hover {
+        background: rgba(100,255,218,0.16);
+    }
+/*   end added    */
+
+.page-footer {
+    padding: 20px 10%;
+    background: rgba(10, 25, 47, 0.8);
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+    text-align: center;
+    color: rgba(100, 255, 218, 0.7);
+    margin-top: auto;
+}
+
+/* Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 95%, rgba(100, 255, 218, 0.05) 95%), linear-gradient(90deg, transparent 95%, rgba(100, 255, 218, 0.05) 95%);
+    background-size: 30px 30px;
+    z-index: -1;
+}
+
+/* Typewriter */
+.typewriter-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    width: 0;
+    border-right: .15em solid var(--neon-green);
+    font-size: 2em;
+    max-width: fit-content;
+    color: var(--neon-green);
+    animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+    from,to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--neon-green);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .side-nav {
+        width: 60px;
+        left: 0;
+        padding-top: 20px;
+    }
+
+        .side-nav:hover {
+            left: 0;
+        }
+
+    .nav-item {
+        margin: 10px 5px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .main-content-wrapper {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+        padding: 10px;
+    }
+
+    .section {
+        padding: 30px 5%;
+    }
+
+    input, textarea, button {
+        width: 100%;
+    }
+}
